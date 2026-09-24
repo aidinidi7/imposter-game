@@ -22,4 +22,6 @@ Dann im Browser `http://localhost:8080` öffnen. Beenden mit `Strg + C` im Termi
 
 ## Link
 
-Folgt, sobald GitHub Pages eingerichtet ist.
+**https://aidinidi7.github.io/imposter-game/**
+
+Auf dem iPhone in Safari öffnen, dann Teilen und "Zum Home-Bildschirm". Läuft danach auch offline.
