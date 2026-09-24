@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0e0f12">
+  <meta name="description" content="Imposter-Wortspiel für 3 bis 10 Leute, jeder am eigenen Handy.">
+  <title>Imposter</title>
+
+  <!-- Homescreen-App (iPhone) -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Imposter">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Startbilder, erzeugt mit tools/make_icons.py -->
+  <link rel="apple-touch-startup-image" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/splash-1320x2868.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/splash-1206x2622.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 420px) and (device-height: 912px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/splash-1260x2736.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/splash-1290x2796.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/splash-1179x2556.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/splash-1284x2778.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/splash-1170x2532.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/splash-1125x2436.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 360px) and (device-height: 780px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/splash-1080x2340.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/splash-1242x2688.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash/splash-828x1792.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash/splash-750x1334.png">
+
+  <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <main class="app">
+
+    <section id="screen-setup" class="screen" hidden>
+      <header class="brand">
+        <h1>Imposter</h1>
+        <p class="muted">Ein Wort. Einer weiß es nicht.</p>
+      </header>
+
+      <form id="setup-form" class="stack" novalidate>
+
+        <!-- Kompakte Ansicht, wenn der Raum schon feststeht (Einladung oder zurück aus dem Spiel) -->
+        <div id="room-summary" class="summary" hidden>
+          <div class="summary-main">
+            <span class="label">Raum</span>
+            <span id="summary-code" class="summary-code mono"></span>
+            <span id="summary-details" class="summary-details"></span>
+          </div>
+          <button id="btn-edit-room" type="button" class="ghost small">Ändern</button>
+        </div>
+
+        <div id="room-settings" class="stack">
+          <div class="field">
+            <label class="label" for="room-code">Raumcode</label>
+            <div class="input-row">
+              <input id="room-code" class="input" type="text" inputmode="numeric"
+                     autocomplete="off" autocapitalize="off" spellcheck="false"
+                     maxlength="12" placeholder="z. B. 4827">
+              <button id="btn-random" type="button" class="ghost">Zufällig</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="label">Spieler</span>
+            <div class="stepper">
+              <button type="button" data-step="-1" aria-label="Weniger Spieler">&minus;</button>
+              <output id="player-count">4</output>
+              <button type="button" data-step="1" aria-label="Mehr Spieler">+</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-head">
+              <span class="label">Kategorien</span>
+              <span id="word-count" class="label"></span>
+            </div>
+            <div id="category-picker" class="chips"></div>
+            <span class="label label-sub">Themen</span>
+            <div id="theme-picker" class="chips"></div>
+          </div>
+
+          <label class="toggle">
+            <input id="imposter-hint" type="checkbox">
+            <span>Imposter sieht die Kategorie</span>
+          </label>
+        </div>
+
+        <div class="field">
+          <span class="label">Ich bin Spieler</span>
+          <div id="player-picker" class="picker" role="radiogroup" aria-label="Spielernummer"></div>
+        </div>
+
+        <!-- Bleibt beim Scrollen am unteren Rand -->
+        <div class="setup-actions">
+          <p id="setup-error" class="error" role="alert" hidden></p>
+          <button type="submit" class="primary">Spiel starten</button>
+          <button id="btn-invite" type="button" class="ghost">Einladungslink teilen</button>
+          <p id="setup-info" class="info" hidden></p>
+        </div>
+
+        <button id="btn-guide" type="button" class="link">So funktioniert's</button>
+      </form>
+    </section>
+
+    <section id="screen-game" class="screen" hidden>
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="btn-settings" type="button" class="ghost small">Einstellungen</button>
+          <span id="meta-room" class="meta"></span>
+        </div>
+        <div class="player-badge">
+          <span class="label">Du bist</span>
+          <span id="meta-player" class="player-badge-number"></span>
+        </div>
+      </header>
+
+      <div class="round">
+        <div class="round-main">
+          <span class="label">Runde</span>
+          <button id="btn-round" type="button" class="round-button" aria-label="Runde ändern">
+            <span id="round-number" class="round-number">1</span>
+          </button>
+        </div>
+        <dl class="round-facts">
+          <div>
+            <dt class="label">Beginnt</dt>
+            <dd id="round-starter"></dd>
+          </div>
+          <div>
+            <dt class="label">Prüfcode</dt>
+            <dd id="round-check" class="mono"></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div id="card" class="card" role="button" tabindex="0"
+           aria-label="Gedrückt halten, um deine Rolle zu sehen">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <span class="card-ring" aria-hidden="true"></span>
+            <span class="card-hint">Gedrückt halten</span>
+          </div>
+          <div class="card-face card-back" aria-live="polite">
+            <span id="card-category" class="label"></span>
+            <span id="card-word" class="card-word"></span>
+          </div>
+        </div>
+      </div>
+
+      <div id="solution" class="panel solution" hidden>
+        <span class="label reveal-1">Das Wort war</span>
+        <span id="solution-word" class="card-word reveal-1"></span>
+        <span class="solution-divider reveal-2" aria-hidden="true"></span>
+        <span class="label reveal-2">Imposter</span>
+        <span id="solution-imposter" class="solution-imposter reveal-2"></span>
+      </div>
+
+      <div class="actions">
+        <button id="btn-prev" type="button" class="ghost">Zurück</button>
+        <button id="btn-resolve" type="button" class="ghost">Auflösen</button>
+        <button id="btn-next" type="button" class="primary wide">Nächste Runde</button>
+      </div>
+
+      <p class="footnote muted">Wortliste v<span id="meta-version"></span></p>
+
+      <dialog id="round-dialog" class="dialog">
+        <form id="round-form" method="dialog" class="stack">
+          <label class="label" for="round-input">Zu Runde springen</label>
+          <input id="round-input" class="input" type="number" inputmode="numeric" min="1" max="9999">
+          <p class="muted dialog-text">Nur nötig, wenn du später dazukommst oder dein Handy neu startest.
+            Danach sollte der Prüfcode bei allen gleich sein.</p>
+          <div class="actions">
+            <button type="submit" value="cancel" class="ghost" formnovalidate>Abbrechen</button>
+            <button type="submit" value="ok" class="primary">Übernehmen</button>
+          </div>
+        </form>
+      </dialog>
+    </section>
+
+    <!-- Kurzanleitung, erscheint beim ersten Start automatisch -->
+    <dialog id="guide-dialog" class="dialog">
+      <form method="dialog" class="stack">
+        <h2 class="dialog-title">So funktioniert's</h2>
+        <ol class="guide">
+          <li>Einer richtet den Raum ein und teilt den <strong>Einladungslink</strong>.
+            Oder er sagt den 4-stelligen Code an.</li>
+          <li>Jeder wählt seine <strong>Nummer</strong>, am besten im Uhrzeigersinn.
+            Keine Nummer doppelt.</li>
+          <li><strong>Karte gedrückt halten:</strong> Alle sehen dasselbe Wort, nur der
+            Imposter nicht.</li>
+          <li>Reihum ein passendes Wort sagen, dann abstimmen und <strong>auflösen</strong>.</li>
+          <li>Jeder tippt selbst auf <strong>Nächste Runde</strong>. Gleicher Prüfcode
+            heißt: alle sind synchron.</li>
+        </ol>
+        <button type="submit" value="ok" class="primary">Verstanden</button>
+      </form>
+    </dialog>
+
+    <!-- Allgemeine Rueckfrage, Text wird per JS gesetzt -->
+    <dialog id="confirm-dialog" class="dialog">
+      <form method="dialog" class="stack">
+        <h2 id="confirm-title" class="dialog-title"></h2>
+        <p id="confirm-text" class="muted dialog-text"></p>
+        <div class="actions">
+          <button type="submit" value="cancel" class="ghost">Abbrechen</button>
+          <button id="confirm-ok" type="submit" value="ok" class="primary"></button>
+        </div>
+      </form>
+    </dialog>
+
+  </main>
+</body>
+</html>

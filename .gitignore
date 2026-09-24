@@ -1,0 +1,24 @@
+# Lokale Umgebungsvariablen, niemals committen
+.env
+.env.*
+!.env.example
+
+# Editor und System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (nur falls spaeter Tools dazukommen)
+node_modules/
+
+# Lokale Vorschau-Seiten
+font-preview.html
+
+# Lokale Claude-Einstellungen
+.claude/settings.local.json
+
+# Nur lokal: Arbeitsnotizen und Einstellungen fuer Claude
+CLAUDE.md
+.claude/
