@@ -71,9 +71,9 @@ export function createRound(settings, words) {
   const entry = deck[(round - 1) % deck.length];
   const rand = createRng(hashString(`round|${roomKey(settings)}|${round}`));
   const imposter = randomInt(rand, playerCount) + 1;
-  // Startspieler ist nie der Imposter, sonst muesste er ganz ohne Anhaltspunkt anfangen.
-  const offset = randomInt(rand, playerCount - 1) + 1;
-  const starter = ((imposter - 1 + offset) % playerCount) + 1;
+  // Startspieler komplett zufaellig, auch der Imposter kann anfangen. Waere er ausgeschlossen,
+  // koennte man daraus schliessen, dass der Startspieler sicher unschuldig ist.
+  const starter = randomInt(rand, playerCount) + 1;
   return { round, word: entry.word, category: entry.category, imposter, starter };
 }
 
