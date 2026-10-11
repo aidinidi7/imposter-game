@@ -3,7 +3,7 @@
 //
 // special: true = Themen-Kategorie (Anime, Filme, ...). Nur Begriffe, die auch
 // Leute kennen, die sich nicht fuer das Thema interessieren.
-export const WORDLIST_VERSION = 7;
+export const WORDLIST_VERSION = 8;
 
 export const CATEGORIES = [
   {
@@ -411,19 +411,26 @@ export const CATEGORIES = [
     ],
   },
   {
-    id: "internet",
-    name: "Internet & Memes",
+    id: "memes",
+    name: "Memes",
     special: true,
     words: [
-      "Rickroll", "Brainrot", "Skibidi Toilet", "NPC", "Ghosting", "Clickbait",
-      "Shitstorm", "GIF", "Emoji", "Hashtag", "Instagram-Story", "Livestream",
-      "Unboxing", "Reaction-Video", "ASMR", "Doomscrolling", "Boomer", "Karen",
-      "Grumpy Cat", "Doge", "Nyan Cat", "Trollface", "This is fine", "Stonks",
-      "Ice Bucket Challenge", "Harlem Shake", "Gangnam Style", "Captcha", "Spam",
-      "For You Page", "Blauer Haken", "Kommentarspalte", "Wikipedia", "Reddit",
-      "Discord", "Ladebalken", "404-Fehler", "Cookie-Banner", "Pop-up-Werbung",
-      "Sprachnachricht", "Gruppenchat", "Screenshot", "Rabattcode", "Zoom-Call",
-      "WLAN-Passwort",
+      // Internationale Klassiker
+      "Rickroll", "Doge", "Grumpy Cat", "Nyan Cat", "Trollface", "Pepe der Frosch",
+      "This is fine", "Distracted Boyfriend", "Drake-Meme", "Frau schreit Katze an",
+      "Success Kid", "Crying Jordan", "Stonks", "Hide the Pain Harold",
+      "Bad Luck Brian", "Disaster Girl", "Surprised Pikachu", "Change My Mind",
+      "Gigachad", "Big Chungus", "Sargträger-Tanz", "Kermit mit Tee",
+      "Mocking SpongeBob", "Is this a pigeon", "Salt Bae", "Bongo Cat", "Vibing Cat",
+      "Leeroy Jenkins", "Charlie bit my finger", "Dramatic Chipmunk", "Sad Keanu",
+      "Chuck-Norris-Witze", "Bernie mit Handschuhen", "It's Wednesday my dudes",
+      "OK Boomer", "Karen", "NPC", "Skibidi Toilet",
+      // Virale Trends und Challenges
+      "Gangnam Style", "Harlem Shake", "Ice Bucket Challenge", "Mannequin Challenge",
+      "Bottle Flip", "Floss-Tanz", "Dabbing", "Planking", "Zimt-Challenge",
+      // Deutsche Klassiker
+      "Ich habe fertig", "Forza ist fertig", "Chantal, heul leise",
+      "Was ist das für 1 Life",
     ],
   },
   {
