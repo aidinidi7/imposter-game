@@ -3,7 +3,7 @@
 //
 // special: true = Themen-Kategorie (Anime, Filme, ...). Nur Begriffe, die auch
 // Leute kennen, die sich nicht fuer das Thema interessieren.
-export const WORDLIST_VERSION = 5;
+export const WORDLIST_VERSION = 6;
 
 export const CATEGORIES = [
   {
@@ -217,6 +217,10 @@ export const CATEGORIES = [
       "Tanjiro", "Gojo", "Sukuna", "All Might", "Deku", "Saitama", "Anya", "Ash Ketchum",
       "Mewtu", "Relaxo", "Glurak", "Pokédex", "Freezer", "Piccolo", "Dragonballs",
       "Shenlong", "Akatsuki", "Konoha", "Chidori", "Otaku", "Senpai", "Kawaii", "Isekai",
+      // Bekanntere, allgemeinere Begriffe
+      "Ponyo", "Prinzessin Mononoke", "Das wandelnde Schloss", "Captain Tsubasa",
+      "Biene Maja", "Wickie", "Ninja", "Samurai", "Katana", "Sensei", "Ramen",
+      "Shuriken", "Chibi", "Waifu", "Crunchyroll", "Tokio",
     ],
   },
   {
@@ -246,6 +250,12 @@ export const CATEGORIES = [
       "Türkisch für Anfänger", "Stromberg", "Babylon Berlin", "Dschungelcamp",
       "Germany's Next Topmodel", "Bauer sucht Frau", "Love Island", "Wer wird Millionär",
       "Die Sendung mit der Maus", "Die drei Fragezeichen", "Tagesschau",
+      // Bekanntere, allgemeinere Begriffe
+      "Bambi", "Dumbo", "Das Dschungelbuch", "Godzilla", "King Kong", "Rambo",
+      "Mamma Mia", "Grease", "Dirty Dancing", "Pretty Woman", "Der Teufel trägt Prada",
+      "Mean Girls", "American Pie", "Scary Movie", "Saw",
+      "Gute Zeiten, schlechte Zeiten", "Big Brother", "Das Supertalent", "The Voice",
+      "Let's Dance", "Sex and the City", "Gilmore Girls", "Emily in Paris",
     ],
   },
   {
@@ -270,6 +280,11 @@ export const CATEGORIES = [
       "Nintendo DS", "Xbox", "Steam", "Twitch", "Creeper", "Link", "Prinzessin Peach",
       "Bowser", "Luigi", "Yoshi", "Lara Croft", "Master Chief", "Kratos", "Endboss",
       "Speedrun", "Lootbox",
+      // Bekanntere, allgemeinere Begriffe
+      "Pong", "Space Invaders", "Controller", "Joystick", "Headset", "Gamer", "Level",
+      "Highscore", "Cheatcode", "Respawn", "Noob", "E-Sport", "LAN-Party",
+      "Arcade-Automat", "Virtual Reality", "Gaming-Stuhl", "Easter Egg",
+      "Speicherstand", "Game Over", "Extraleben", "Pixel",
     ],
   },
   {
@@ -290,6 +305,11 @@ export const CATEGORIES = [
       "Paulaner", "Ritter Sport", "Pringles", "Oreo", "Ben & Jerry's", "Dr. Oetker",
       "Tempo", "Tesa", "Uber", "Airbnb", "Snapchat", "Zalando", "Ryanair", "Rossmann",
       "Edeka", "Rewe", "Media Markt", "Monster Energy", "Duolingo", "PayPal",
+      // Bekanntere, allgemeinere Begriffe
+      "Kellogg's", "Nestlé", "Ferrero", "Toblerone", "Raffaello", "Snickers", "Twix",
+      "KitKat", "M&M's", "Skittles", "Hanuta", "Leibniz", "Lacoste", "Crocs",
+      "Birkenstock", "Dyson", "Bosch", "Miele", "GoPro", "JBL", "Netto", "Penny",
+      "Douglas", "DHL", "Telekom", "Vodafone", "Shell", "Toyota", "Fiat", "Vespa",
     ],
   },
   {
@@ -330,6 +350,14 @@ export const CATEGORIES = [
       // Geschichte
       "Martin Luther", "Marie Curie", "Leonardo da Vinci", "Shakespeare",
       "Christoph Kolumbus", "Papst",
+      // Bekanntere, allgemeinere Begriffe
+      "Joe Biden", "Emmanuel Macron", "König Charles", "Prinz Harry", "Meghan Markle",
+      "Prinzessin Diana", "Greta Thunberg", "Jeff Bezos", "Oprah Winfrey",
+      "Gordon Ramsay", "Tim Mälzer", "Steffen Henssler", "Bud Spencer", "Terence Hill",
+      "Bruce Lee", "Chuck Norris", "Freddie Mercury", "The Beatles", "ABBA", "Nena",
+      "DJ Ötzi", "Mickie Krause", "Andrea Berg", "Florian Silbereisen",
+      "Hape Kerkeling", "Otto Waalkes", "Loriot", "Michael Bully Herbig",
+      "Mario Barth",
     ],
   },
   {
@@ -353,6 +381,11 @@ export const CATEGORIES = [
       "Infinity-Handschuh", "Mjölnir", "Vibranium", "Spinnensinn", "Malefiz", "Jafar",
       "Shir Khan", "Imperator Palpatine", "Megamind", "Ghostface", "Annabelle",
       "Michael Myers",
+      // Bekanntere, allgemeinere Begriffe
+      "Robin Hood", "Tarzan", "Herkules", "Jack Sparrow", "Ninja Turtles",
+      "Power Rangers", "He-Man", "Inspector Gadget", "Bösewicht", "Geheimidentität",
+      "Erzfeind", "Sidekick", "Laserblick", "Unsichtbarkeit", "Teleportation",
+      "Gedankenlesen", "Superstärke",
     ],
   },
   {
@@ -376,6 +409,41 @@ export const CATEGORIES = [
       "Steckerlfisch", "Wiesn-Hendl", "Kaiserschmarrn", "Bierzelt", "Lebkuchenherz",
       "Mia san mia", "Oachkatzlschwoaf", "Gaudi", "Bussi", "Spezi", "Olympiasee",
       "BMW-Vierzylinder", "Nockherberg", "Münchner Kindl", "Bavaria",
+    ],
+  },
+  {
+    id: "internet",
+    name: "Internet & Memes",
+    special: true,
+    words: [
+      "Rickroll", "Brainrot", "Skibidi Toilet", "NPC", "Ohio", "Main Character",
+      "Sigma", "Rizz", "Aura", "Delulu", "Slay", "Cringe", "Sus", "Simp", "Ghosting",
+      "Clickbait", "Shitstorm", "Meme", "GIF", "Emoji", "Hashtag", "Filter",
+      "Instagram-Story", "Livestream", "Unboxing", "Reaction-Video", "ASMR",
+      "Doomscrolling", "FOMO", "YOLO", "Boomer", "Karen", "Grumpy Cat", "Doge",
+      "Nyan Cat", "Trollface", "This is fine", "Stonks", "Ice Bucket Challenge",
+      "Harlem Shake", "Gangnam Style", "Chad", "Mewing", "Bot", "Captcha", "Spam",
+      "Shadowban", "Algorithmus", "For You Page", "Follower", "Blauer Haken",
+      "Kommentarspalte", "Hater", "Ehrenmann", "Digga", "Bruh", "Lol",
+    ],
+  },
+  {
+    id: "kindheit",
+    name: "Kindheit 2000er",
+    special: true,
+    words: [
+      "Nokia 3310", "Klapphandy", "SchülerVZ", "ICQ", "MSN", "Bravo", "Diddl",
+      "Yu-Gi-Oh-Karten", "Pokémon-Karten", "PlayStation 2", "Furby", "Polly Pocket",
+      "Bratz", "Beyblade", "Crazy Frog", "Schnappi", "Ketchup Song", "Popstars",
+      "DSDS", "Bibi Blocksberg", "Benjamin Blümchen", "Die Wilden Kerle",
+      "Die wilden Hühner", "Kim Possible", "Hannah Montana", "High School Musical",
+      "Disney Channel", "Super RTL", "KiKA", "Toggo", "Bernd das Brot", "Peter Lustig",
+      "Kinder Pingui", "Ahoj-Brause", "Center Shock", "Push Pop", "Kaugummi-Tattoo",
+      "Fruchtzwerge", "Schultüte", "Freundebuch", "Gelstifte", "Tintenkiller",
+      "Scout-Ranzen", "Moorhuhn", "Solitär", "Minesweeper", "Paint", "Windows XP",
+      "Modem-Geräusch", "MP3-Player", "iPod", "Discman", "Kassette", "VHS",
+      "Videothek", "Bravo Hits", "Panini-Album", "Klingelton", "Jamba-Sparabo", "T9",
+      "Snake",
     ],
   },
 ];
