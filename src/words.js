@@ -3,7 +3,7 @@
 //
 // special: true = Themen-Kategorie (Anime, Filme, ...). Nur Begriffe, die auch
 // Leute kennen, die sich nicht fuer das Thema interessieren.
-export const WORDLIST_VERSION = 4;
+export const WORDLIST_VERSION = 5;
 
 export const CATEGORIES = [
   {
@@ -209,6 +209,14 @@ export const CATEGORIES = [
       "Nezuko", "Kamehameha", "Rasengan", "Teufelsfrucht", "Sharingan", "Hokage",
       "Manga", "Cosplay", "Pokéball", "Glumanda", "Team Rocket", "Titan",
       "Super Saiyajin",
+      // Mehr
+      "Fullmetal Alchemist", "Neon Genesis Evangelion", "Haikyu!!", "Fairy Tail",
+      "Black Clover", "Sword Art Online", "Solo Leveling", "Blue Lock", "Frieren",
+      "Light Yagami", "Ryuk", "Itachi", "Gaara", "Neunschwänziger Fuchs", "Lorenor Zorro",
+      "Sanji", "Shanks", "Strohhut", "Gum-Gum-Frucht", "Eren Jäger", "Mikasa", "Levi",
+      "Tanjiro", "Gojo", "Sukuna", "All Might", "Deku", "Saitama", "Anya", "Ash Ketchum",
+      "Mewtu", "Relaxo", "Glurak", "Pokédex", "Freezer", "Piccolo", "Dragonballs",
+      "Shenlong", "Akatsuki", "Konoha", "Chidori", "Otaku", "Senpai", "Kawaii", "Isekai",
     ],
   },
   {
@@ -226,6 +234,18 @@ export const CATEGORIES = [
       "Sherlock", "Wednesday", "The Walking Dead", "Peaky Blinders",
       "Fack ju Göhte", "Der Schuh des Manitu", "Kevin allein zu Haus", "Mr. Bean",
       "Indiana Jones", "Zurück in die Zukunft", "Ghostbusters", "Hangover",
+      // Mehr
+      "Forrest Gump", "Inception", "Interstellar", "Gladiator", "Oppenheimer", "Dune",
+      "Fast & Furious", "Mission: Impossible", "Terminator", "Alien", "Der weiße Hai",
+      "E.T.", "Star Trek", "Die Tribute von Panem", "Twilight", "Die Schöne und das Biest",
+      "Arielle", "Mulan", "Coco", "Vaiana", "Ratatouille", "Oben", "Alles steht Kopf",
+      "Die Unglaublichen", "Monster AG", "Kung Fu Panda", "Madagascar",
+      "The Office", "Prison Break", "Dr. House", "Grey's Anatomy", "Two and a Half Men",
+      "Bridgerton", "Vikings", "Narcos", "Lost", "Better Call Saul", "Modern Family",
+      "Family Guy", "South Park", "Rick and Morty", "Futurama", "Arcane",
+      "Türkisch für Anfänger", "Stromberg", "Babylon Berlin", "Dschungelcamp",
+      "Germany's Next Topmodel", "Bauer sucht Frau", "Love Island", "Wer wird Millionär",
+      "Die Sendung mit der Maus", "Die drei Fragezeichen", "Tagesschau",
     ],
   },
   {
@@ -242,6 +262,14 @@ export const CATEGORIES = [
       "Assassin's Creed", "Donkey Kong", "Kirby", "Smash Bros", "Crash Bandicoot",
       "Guitar Hero", "Mario Party", "Brawl Stars", "Roblox", "PlayStation",
       "Nintendo Switch", "Game Boy", "Tamagotchi",
+      // Mehr
+      "Halo", "Elden Ring", "The Last of Us", "God of War", "Uncharted", "Spyro",
+      "Pokémon Go", "Tekken", "Street Fighter", "Mortal Kombat", "Need for Speed",
+      "Gran Turismo", "Battlefield", "PUBG", "Apex Legends", "Stardew Valley", "Terraria",
+      "Cyberpunk 2077", "Fallout", "Portal", "Doom", "Resident Evil", "Wii Fit",
+      "Nintendo DS", "Xbox", "Steam", "Twitch", "Creeper", "Link", "Prinzessin Peach",
+      "Bowser", "Luigi", "Yoshi", "Lara Croft", "Master Chief", "Kratos", "Endboss",
+      "Speedrun", "Lootbox",
     ],
   },
   {
@@ -255,6 +283,13 @@ export const CATEGORIES = [
       "Porsche", "Volkswagen", "Ferrari", "Playmobil", "Aldi", "Lidl", "dm", "H&M",
       "Zara", "Deutsche Bahn", "Lufthansa", "Disney", "Kinder Überraschung", "Milka",
       "Burger King", "Nivea", "Capri-Sonne", "Maggi",
+      // Mehr
+      "Samsung", "Microsoft", "Sony", "Gucci", "Louis Vuitton", "Rolex", "Puma",
+      "Converse", "Vans", "The North Face", "Ray-Ban", "Levi's", "Calvin Klein",
+      "Hugo Boss", "Tommy Hilfiger", "Audi", "Opel", "Lamborghini", "Fanta", "Pepsi",
+      "Paulaner", "Ritter Sport", "Pringles", "Oreo", "Ben & Jerry's", "Dr. Oetker",
+      "Tempo", "Tesa", "Uber", "Airbnb", "Snapchat", "Zalando", "Ryanair", "Rossmann",
+      "Edeka", "Rewe", "Media Markt", "Monster Energy", "Duolingo", "PayPal",
     ],
   },
   {
@@ -281,6 +316,20 @@ export const CATEGORIES = [
       "Jackie Chan", "Robert Downey Jr.", "Emma Watson", "Daniel Radcliffe",
       "Matthias Schweighöfer", "Elyas M'Barek", "Jim Carrey", "Adam Sandler",
       "Denzel Washington", "Meryl Streep", "Nicolas Cage", "Vin Diesel",
+      // Musik
+      "Drake", "Kanye West", "Travis Scott", "Ariana Grande", "Harry Styles", "Bad Bunny",
+      "The Weeknd", "Dua Lipa", "Cro", "Sido", "Capital Bra", "Mark Forster", "Peter Fox",
+      "Rammstein", "Tokio Hotel", "Udo Lindenberg", "Herbert Grönemeyer", "Robbie Williams",
+      // Sport
+      "Usain Bolt", "Michael Jordan", "LeBron James", "Roger Federer", "Lewis Hamilton",
+      "Max Verstappen", "Jürgen Klopp", "Toni Kroos", "Jamal Musiala", "Harry Kane",
+      "Neymar", "Kylian Mbappé", "Muhammad Ali", "Mike Tyson",
+      // Internet und TV
+      "PewDiePie", "Knossi", "Montana Black", "Papaplatte", "Julien Bam",
+      "Günther Jauch", "Barbara Schöneberger", "Oliver Pocher", "Daniela Katzenberger",
+      // Geschichte
+      "Martin Luther", "Marie Curie", "Leonardo da Vinci", "Shakespeare",
+      "Christoph Kolumbus", "Papst",
     ],
   },
   {
@@ -296,6 +345,14 @@ export const CATEGORIES = [
       "Captain Hook", "Grinch", "Sauron", "Gollum", "Freddy Krueger", "Chucky",
       "Pennywise", "Hannibal Lecter", "Dracula", "Kryptonit", "Batmobil",
       "Bat-Signal", "Umhang", "Superkraft", "X-Men", "Justice League",
+      // Mehr
+      "Green Lantern", "Supergirl", "Daredevil", "Captain Marvel", "Scarlet Witch",
+      "Star-Lord", "Rocket", "Nick Fury", "Professor X", "Mystique", "Silver Surfer",
+      "Fantastic Four", "Doctor Doom", "Ultron", "Green Goblin", "Two-Face", "Poison Ivy",
+      "Mr. Freeze", "Alfred", "Lois Lane", "Gotham City", "Wakanda", "Asgard",
+      "Infinity-Handschuh", "Mjölnir", "Vibranium", "Spinnensinn", "Malefiz", "Jafar",
+      "Shir Khan", "Imperator Palpatine", "Megamind", "Ghostface", "Annabelle",
+      "Michael Myers",
     ],
   },
   {
@@ -313,6 +370,12 @@ export const CATEGORIES = [
       "Tollwood", "Starkbierfest", "Schwabing", "Gärtnerplatz", "Glockenbachviertel",
       "Tegernsee", "Starnberger See", "Zugspitze", "Neuschwanstein", "LMU", "TUM",
       "Hochschule München", "Schickeria", "Grantler", "Servus",
+      // Mehr
+      "Siegestor", "Feldherrnhalle", "Hofgarten", "Isartor", "Leopoldstraße",
+      "Münchner Freiheit", "Augustiner", "Löwenbräu", "Dallmayr", "Weißbier",
+      "Steckerlfisch", "Wiesn-Hendl", "Kaiserschmarrn", "Bierzelt", "Lebkuchenherz",
+      "Mia san mia", "Oachkatzlschwoaf", "Gaudi", "Bussi", "Spezi", "Olympiasee",
+      "BMW-Vierzylinder", "Nockherberg", "Münchner Kindl", "Bavaria",
     ],
   },
 ];
